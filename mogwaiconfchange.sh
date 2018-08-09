@@ -1,17 +1,7 @@
 #!/bin/bash
 
-
-
-
-
-
-
-
-
-
-
-function create_config2() {
-  mkdir $CONFIGFOLDER2 >/dev/null 2>&1
+function update_config() {
+  cd $CONFIGFOLDER2 >/dev/null 2>&1
   RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
   cat << EOF > $CONFIGFOLDER2/$CONFIG_FILE
